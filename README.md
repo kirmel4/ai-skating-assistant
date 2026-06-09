@@ -2,6 +2,8 @@
 
 ![Keypoints visualization](assets/keypoints_viz.gif)
 
+![Frontend screenshot](assets/front.png)
+
 Сервис анализа видео выступлений фигуристов: FastAPI backend принимает видео, ставит задачу в очередь, ML-пайплайн находит прыжки и возвращает классификацию. Статический фронт лежит в `front/` и раздается самим backend.
 
 ## Структура
