@@ -1,0 +1,21 @@
+# Зависимости сервиса для Docker-образа.
+# torch / torchvision НЕ здесь — их даёт базовый образ pytorch/pytorch (CUDA).
+
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+python-multipart>=0.0.12
+pydantic-settings>=2.6.0
+
+ultralytics>=8.3.0          # YOLOv8 (детект + pose); тянет opencv-python,
+                            # в Dockerfile он заменяется на opencv-python-headless
+onnx>=1.16.0                # экспорт YOLO в ONNX
+onnxruntime>=1.18.0         # инференс ONNX на CPU
+onnxslim>=0.1.0             # упрощение графа при экспорте
+transformers>=4.44.0        # get_cosine_schedule_with_warmup (импорт в train-скриптах)
+numpy>=2.0.0
+scipy>=1.13.0
+pandas>=2.2.0
+scikit-learn>=1.5.0
+matplotlib>=3.9.0
+openpyxl>=3.1.5             # чтение xlsx-разметки
+tqdm>=4.66.0

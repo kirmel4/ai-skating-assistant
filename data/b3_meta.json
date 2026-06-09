@@ -1,0 +1,26 @@
+{
+  "num_classes": {
+    "jump": 6,
+    "rot": 4,
+    "under": 2,
+    "fall": 2
+  },
+  "jump_id_to_code": {
+    "0": "T",
+    "1": "S",
+    "2": "Lo",
+    "3": "F",
+    "4": "Lz",
+    "5": "A"
+  },
+  "rotation_id_to_value": {
+    "0": 1.0,
+    "1": 2.0,
+    "2": 3.0,
+    "3": 4.0
+  },
+  "underrotation_id_to_status": {
+    "0": "clean",
+    "1": "ur"
+  }
+}

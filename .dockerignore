@@ -1,0 +1,30 @@
+# крупные данные и веса — монтируются томами, в образ не нужны
+data/
+checkpoints_verifier/
+checkpoints_pose_b3_final/
+checkpoints_pose*/
+checkpoints*/
+tmp/
+
+# веса моделей и видео
+*.pt
+*.pth
+*.onnx
+*.mp4
+*.mov
+*.mkv
+*.zip
+*.xlsx
+
+# питоновский мусор и окружения
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+*.ipynb
+
+# git и прочее
+.git/
+.gitignore
+*.log

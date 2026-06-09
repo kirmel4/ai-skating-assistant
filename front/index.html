@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jump Vision</title>
+    <link rel="stylesheet" href="styles.css?v=6" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="workspace">
+        <div class="panel upload-panel">
+          <div class="brand">
+            <span class="brand-mark">JV</span>
+            <div>
+              <h1>Jump Vision</h1>
+              <p>Анализ короткой программы</p>
+            </div>
+          </div>
+
+          <label class="drop-zone" for="videoInput" id="dropZone">
+            <input id="videoInput" type="file" accept="video/*" />
+            <span class="upload-icon" aria-hidden="true">+</span>
+            <strong>Загрузите видео программы</strong>
+            <span>MP4, MOV или WebM</span>
+          </label>
+
+          <div class="video-shell" id="videoShell">
+            <video id="videoPreview" controls></video>
+          </div>
+
+          <div class="actions">
+            <button class="primary-button" id="analyzeButton" type="button" disabled>
+              Анализировать
+            </button>
+            <button class="ghost-button" id="resetButton" type="button" disabled>
+              Очистить
+            </button>
+          </div>
+
+        </div>
+
+        <div class="panel result-panel">
+          <div class="result-header">
+            <div>
+              <h2>Найденные прыжки</h2>
+              <p id="statusText">Загрузите программу, чтобы начать анализ.</p>
+            </div>
+            <span class="status-badge" id="statusBadge">Ожидание</span>
+          </div>
+
+          <div class="loader" id="loader" hidden>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="summary-cards" id="summaryCards" hidden>
+            <article class="summary-card">
+              <span>Всего</span>
+              <strong id="totalJumps">0</strong>
+            </article>
+            <article class="summary-card">
+              <span>Ошибки</span>
+              <strong id="problemJumps">0</strong>
+            </article>
+          </div>
+
+          <div class="jump-list" id="jumpList" hidden>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js?v=8"></script>
+  </body>
+</html>

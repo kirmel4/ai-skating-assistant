@@ -1,0 +1,80 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments and local config
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+ENV/
+
+# Build, packaging, cache
+build/
+dist/
+*.egg-info/
+.eggs/
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+htmlcov/
+.coverage
+.coverage.*
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs and runtime state
+*.log
+tmp/
+data/jobs.db
+*.sqlite
+*.sqlite3
+*.db
+
+# Large media and generated datasets
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.webm
+*.zip
+keypoints_viz.gif
+video10_candidates.json
+data/clips/
+data/videos/
+data/fp_review/
+data/jump_detection/
+data/verifier_pose/
+data/pose_kpts_*/
+data/pose_keypoints_*/
+data/VideoMAEv2-Base/
+**/~$*.xlsx
+
+# Model weights and exported models
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+checkpoints*/
+yolov8*.pt
+yolov8*.onnx
+
+# Experiment outputs
+catboost_info/
+checkpoints_*/
+experiments/**/catboost_info/
+
+# Jupyter runtime
+.ipynb_checkpoints/

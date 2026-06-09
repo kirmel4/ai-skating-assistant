@@ -1,0 +1,23 @@
+{
+  "_note": "Доп. окна для обучения verifier'а сверх кандидатов detect_jumps. positives — подтверждённые прыжки video10, отсутствующие в мастер-разметке (иначе уходили бы в негативы). negatives — подтверждённые НЕ-прыжки, на которых verifier уверенно ошибался (hard negatives). Окна задаются как video_id + start/end (сек). Включаются в обучение принудительно; negatives дублируются FORCED_NEG_REPEAT раз.",
+  "positives": [
+    {"video_id": 10, "start": 330.7, "end": 331.3},
+    {"video_id": 10, "start": 355.4, "end": 355.9},
+    {"video_id": 10, "start": 538.4, "end": 538.9},
+    {"video_id": 10, "start": 1220.7, "end": 1223.1},
+    {"video_id": 10, "start": 1606.4, "end": 1607.0},
+    {"video_id": 10, "start": 1950.6, "end": 1951.2},
+    {"video_id": 10, "start": 2291.4, "end": 2291.8},
+    {"video_id": 10, "start": 2354.6, "end": 2355.7},
+    {"video_id": 10, "start": 2470.4, "end": 2470.8},
+    {"video_id": 10, "start": 2494.9, "end": 2495.2},
+    {"video_id": 10, "start": 3074.0, "end": 3074.6},
+    {"video_id": 10, "start": 3469.3, "end": 3471.8},
+    {"video_id": 10, "start": 3779.4, "end": 3779.8},
+    {"video_id": 10, "start": 4521.3, "end": 4521.6}
+  ],
+  "negatives": [
+    {"video_id": 10, "start": 106.0, "end": 106.6},
+    {"video_id": 10, "start": 2007.6, "end": 2008.2}
+  ]
+}

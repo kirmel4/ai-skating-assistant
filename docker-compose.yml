@@ -1,0 +1,36 @@
+services:
+  ai-skating:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-skating-assistant
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    volumes:
+      # чекпойнты моделей (read-only) — обучаются отдельно, в образ не пекутся
+      - ./checkpoints_verifier:/app/checkpoints_verifier:ro
+      - ./checkpoints_pose_b3_final:/app/checkpoints_pose_b3_final:ro
+      # data/: b3_meta.json (чтение) + jobs.db (запись очереди задач)
+      - ./data:/app/data
+    environment:
+      - SKATING_VERIFIER_THRESHOLD=0.6   # порог verifier'а
+      - SKATING_DEVICE=cuda
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["1"]          # GPU №1 на сервере
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:9090/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 240s                 # модели грузятся при старте — даём запас
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
