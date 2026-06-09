@@ -49,7 +49,6 @@ data/jobs.db
 *.avi
 *.webm
 *.zip
-keypoints_viz.gif
 video10_candidates.json
 data/clips/
 data/videos/
